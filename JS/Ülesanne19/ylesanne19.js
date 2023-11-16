@@ -1,32 +1,56 @@
 /**
  * Karl Jugapuu
- * Üleasnne 17
+ * Üleasnne 19
  * 08.11.2023
  */
 
+let content = document.createElement("div");
+content.className = "container text-center pt-5";
+document.body.appendChild(content);
 
-const jsonURL = "https://dummyjson.com/products";
-
-fetch(jsonURL)
+fetch('https://dummyjson.com/products')
     .then(response => response.json())
     .then(data => {
         var index = 0;
-        let row;
-        data.forEach(item => {
+        for (let product of data.products) {
+            // loob uue rea iga 4 toote tagant
             if (index % 4 == 0) {
-                // Create a new div with class "row gap-3" every 4th item
                 row = document.createElement("div");
-                row.className = "row gap-3";
-                document.body.appendChild(row);
+                row.className = "row gap-3 my-4";
+                content.appendChild(row);
             }
 
-            // Create a new div for the item and append it to the row
-            const itemDiv = document.createElement("div");
-            itemDiv.textContent = JSON.stringify(item);
-            row.appendChild(itemDiv);
+            let img = document.createElement("img");
+            img.className = "img-fluid";
+            img.style = "width: 900px; height: 200px;";
+            img.src = product.thumbnail;
 
-            index++;
-        });
+            let h4 = document.createElement("h4");
+            h4.textContent = product.title;
+            let p = document.createElement("p");
+            p.textContent = product.price + "€";
 
+            let button = document.createElement("button");
+            button.type = "button";
+            button.textContent = "Add to cart";
+            button.className = "btn btn-outline-dark";
+
+            let div = document.createElement('div');
+            div.className = "col border p-0";
+            let divContent = document.createElement('div');
+            divContent.className = "text-center my-4";
+
+            row.appendChild(div);
+            div.appendChild(img);
+            div.appendChild(divContent);
+            divContent.appendChild(h4);
+            divContent.appendChild(p);
+            divContent.appendChild(button);
+
+            ++index;
+        }
     })
-    .catch((error) => console.error('Error:', error));
+    .catch(error => {
+        console.log(error);
+    });
+
