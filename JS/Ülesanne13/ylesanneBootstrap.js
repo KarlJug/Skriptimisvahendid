@@ -4,10 +4,14 @@
  * 23.10.2023
  */
 
-const titels = document.querySelectorAll('[data-title]');
-titels.forEach(titel => {
-    titel.setAttribute("card-title", titel.getAttribute("data-title"));
-    titel.removeAttribute("data-title");
+const cardData = document.querySelectorAll(".card");
+console.log(cardData);
+cardData.forEach(title => {
+    let text = title.querySelector("img").getAttribute("data-description");
+    let name = title.querySelector("img").getAttribute("data-title");
+
+    title.querySelector(".card-title").textContent = name;
+    title.querySelector(".card-text").textContent = text;
 });
 
 
