@@ -4,14 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ülesanne 23</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/eef0b3214d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body class="container">
-    <h1>hello</h1>
-    <div id="reviews" class="">
+<body class="container my-5">
+    <!-- Lisa review -->
+    <button id="addReview" class="btn btn-outline-secondary">Kirjuta hinnang</button>
+    <form id="reviewForm" class="border p-4 my-2 rounded d-none">
+        <h2>Kirjuta hinnang</h2>
+        <br>
+        <textarea name="reviewText" placeholder="Kirjuta hinnang siia" id="reviewText" cols="50" rows="5"
+                  class="rounded form-control" required></textarea>
+        <label for="reviewText"></label>
+
+        <div class="my-2">
+            <p class="mb-0">Hinnang</p>
+            <div id="reviewStars">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-secondary">Submit</button>
+    </form>
+
+    <!-- review-d -->
+    <div class="my-5">
+        <div class="row justify-content-between align-items-center ">
+            <h1 class="col-4">Hinnangud</h1>
+            <i role="button" id="filterButton" class="fa-solid fa-filter fa-lg text-end col-4"></i>
+        </div>
+
+        <!-- filter border border-2 border-dark  -->
+        <div id="filters" class="bg-light rounded p-2 my-3 row">
+            <div class="col">
+                <div role="button">
+                    <div class="row p-0 align-items-center justify-content-start">
+                        <div class="col-auto">
+                            5<i class="fa-regular fa-star selected"></i>
+                        </div>
+                        <div class="col p-0">
+                            <div id="progressBarContainer">
+                                <div id="progressBar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="button">
+                    4<i class="fa-regular fa-star selected"></i>
+                </div>
+                <div role="button">
+                    3<i class="fa-regular fa-star selected"></i>
+                </div>
+                <div role="button">
+                    2<i class="fa-regular fa-star selected"></i>
+                </div>
+                <div role="button">
+                    1<i class="fa-regular fa-star selected"></i>
+                </div>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+
+        <div id="reviews" class="row g-3 row-cols-2 my-3">
+
+
+        </div>
+
+        <!-- pagination buttons -->
+        <div class="row gx-3 justify-content-center align-items-center text-center">
+            <div class="col-auto">
+                <div class="px-1 colorAnimation" role="button" id="paginationPrev">
+                    <span class="fa-solid fa-angle-left fa-xl"></span>
+                </div>
+            </div>
+            <div class="col-auto" id="pageNumbers">
+
+            </div>
+            <div class="col-auto">
+                <div class="px-1 colorAnimation" role="button" id="paginationNext">
+                    <span class="fa-solid fa-angle-right fa-xl"></span>
+                </div>
+            </div>
+        </div>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
     <script src="ylesanne23.js" type="module"></script>
 </body>
 </html>

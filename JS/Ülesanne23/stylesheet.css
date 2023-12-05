@@ -1,0 +1,28 @@
+.checked {
+    color: orange;
+}
+
+.selected {
+    color: orange;
+}
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+#progressBar {
+    width: 10%;  /* Adjust this to change the progress */
+    height: 10px;
+    border-radius: 4px;
+    background-color: orange;
+}
+
+.colorAnimation {
+    transition: color 0.2s ease-in-out;
+}
+
+.colorAnimation:hover {
+    color: orange;
+}
